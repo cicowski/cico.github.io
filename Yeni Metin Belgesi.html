@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balim için Özel Soru</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #d6336c;
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .yes {
+      background-color: #ff69b4;
+      color: white;
+    }
+    .no {
+      background-color: #cccccc;
+    }
+    .yes:hover {
+      background-color: #ff85c1;
+    }
+    .no:hover {
+      background-color: #b3b3b3;
+    }
+    .animation {
+      display: none;
+      margin-top: 30px;
+    }
+    .animation iframe {
+      width: 640px;
+      height: 360px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border: none;
+    }
+    .message {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+  <h1>Balim, benimle çıkar mısın?</h1>
+  <div class="buttons">
+    <button class="yes" onclick="showLove()">Evet 💖</button>
+    <button class="no" onclick="showSad()">Hayır 😢</button>
+  </div>
+  <div class="animation" id="animationBox">
+    <iframe src="https://drive.google.com/file/d/1ZQMIfzAe0ZjLXJPsrXF1agkmU0iKKMGE/preview?autoplay=1" width="640" height="360" allow="autoplay"></iframe>
+    <div class="message" id="loveMessage"></div>
+  </div>
+
+  <script>
+    function showLove() {
+      const box = document.getElementById('animationBox');
+      const message = document.getElementById('loveMessage');
+      box.style.display = 'block';
+      message.innerHTML = '💖💖💖 Cihan şu an çok mutlu! 💖💖💖';
+    }
+
+    function showSad() {
+      const box = document.getElementById('animationBox');
+      const iframe = document.getElementById('loveVideo');
+      const message = document.getElementById('loveMessage');
+      iframe.style.display = 'none';
+      message.innerHTML = '😢 Cihan biraz üzüldü ama yine de seni seviyor.';
+      box.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
